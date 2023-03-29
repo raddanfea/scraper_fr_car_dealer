@@ -9,6 +9,7 @@ A simple selenium scraper that scrapes all cars and all configurations from http
 A simple flask webpage that can display the scraped results.  
 Can filter based on scraping date and configuration details.
 
+![webpage.png](webpage.png)
 
 # Crontab
 
