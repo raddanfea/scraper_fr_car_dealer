@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Car Database</title>
+	<head>
+    <title>My Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  	</head>
+</head>
+<body>
+	<h1>Car Database</h1>
+	<form class='form' action="{{ url_for('home') }}" method="POST">
+      	<input type="text" placeholder="Reaper Search" id="search" name="search">
+		<input type="date" placeholder="Date" id="date" name="date">
+      	<button type="submit">Search</button>
+    </form>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Market</th>
+				<th>Brand</th>
+				<th>Model</th>
+				<th>Entity</th>
+				<th>Engine</th>
+				<th>Price</th>
+				<th>Horsepower</th>
+				<th>Bodystyle</th>
+				<th>Serie</th>
+				<th>Fuel</th>
+				<th>Consumption</th>
+				<th>Emission CO2</th>
+				<th>Transmission</th>
+				<th>Transmission Type</th>
+				<th>Driveline</th>
+				<th>Reaperstring</th>
+				<th>Matchstring</th>
+				<th>Datasource</th>
+				<th>Datum</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in data %}
+			<tr>
+				{% for item in row %}
+				<td>{{ item }}</td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>
+
+<script>
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('date').value = today;
+</script>
